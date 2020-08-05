@@ -64,5 +64,13 @@ namespace _
 
 
         }
+
+        private void btnlimpiarcampo_Click(object sender, EventArgs e)
+        {
+            txthorastrabajadas.Text = string.Empty;
+            txtvalorhora.Text = string.Empty;
+            gbxresumenpago.Visible = false;
+            txthorastrabajadas.Focus = true;
+        }
     }
 }
