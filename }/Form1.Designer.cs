@@ -44,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtvalorhora = new System.Windows.Forms.TextBox();
             this.btnlimpiarcampo = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbxrespuesta = new System.Windows.Forms.ComboBox();
             this.gbxresumenpago.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -210,11 +212,33 @@
             this.btnlimpiarcampo.UseVisualStyleBackColor = true;
             this.btnlimpiarcampo.Click += new System.EventHandler(this.btnlimpiarcampo_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 213);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(151, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Eres empleado Administrativo?";
+            // 
+            // cbxrespuesta
+            // 
+            this.cbxrespuesta.FormattingEnabled = true;
+            this.cbxrespuesta.Items.AddRange(new object[] {
+            "NO",
+            "SI"});
+            this.cbxrespuesta.Location = new System.Drawing.Point(173, 210);
+            this.cbxrespuesta.Name = "cbxrespuesta";
+            this.cbxrespuesta.Size = new System.Drawing.Size(121, 21);
+            this.cbxrespuesta.TabIndex = 9;
+            // 
             // calcular
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxrespuesta);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnlimpiarcampo);
             this.Controls.Add(this.txtvalorhora);
             this.Controls.Add(this.gbxresumenpago);
@@ -251,6 +275,8 @@
         private System.Windows.Forms.Label lblpagosalud;
         private System.Windows.Forms.Label lblsalariobase;
         private System.Windows.Forms.Button btnlimpiarcampo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cbxrespuesta;
     }
 }
 

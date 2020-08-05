@@ -24,7 +24,7 @@ namespace _
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            cbxrespuesta.SelectedIndex = 0;
         }
 
         private void btncalcular_Click(object sender, EventArgs e)
@@ -36,30 +36,61 @@ namespace _
             valorHora= double.Parse(txtvalorhora.Text);
 
             salarioBase = horasTrabajadas * valorHora;
-             
 
-            if ( salarioBase > 1000000)
-            {
+            switch (cbxrespuesta.SelectedItem)
+            { 
+                case "NO":
 
-                salud = salarioBase * 0.04;
-                incremento = 0;                
+                    if (salarioBase > 1000000)
+                    {
 
+                        salud = salarioBase * 0.04;
+                        incremento = 0;
+
+                    }
+                    else
+                    {
+                        salud = 0;
+                        incremento = salarioBase * 0.02;
+
+                    }
+                    salarioAPagar = salarioBase - salud + incremento;
+                    break;
+                    
+
+                case "SI":
+
+                    if (salarioBase > 1000000)
+                    {
+
+                        salud = salarioBase * 0.04;
+                        incremento = 0;
+
+                    }
+                    else
+                    {
+                        salud = 0;
+                        incremento = salarioBase * 0.01;
+
+                    }
+                    salarioAPagar = salarioBase - salud + incremento;
+                    lblsalariobase.Text = Convert.ToString("$" + salarioBase);
+                    lblpagosalud.Text = Convert.ToString(salud);
+                    lblincremento.Text = Convert.ToString(incremento);
+                    lblsalalrioapagar.Text = Convert.ToString(salarioAPagar);
+
+                    gbxresumenpago.Visible = true;
+
+                    break;
+
+                    
             }
-            else
-            {
-                salud = 0;
-                incremento = salarioBase * 0.02;
 
-            }
 
-            salarioAPagar = salarioBase - salud + incremento;
 
-            lblsalariobase.Text = Convert.ToString("$"+String.Format("()"salarioBase));
-            lblpagosalud.Text = Convert.ToString(salud);
-            lblincremento.Text = Convert.ToString(incremento);
-            lblsalalrioapagar.Text = Convert.ToString(salarioAPagar);
+           
 
-            gbxresumenpago.Visible = true;
+            
 
 
 
